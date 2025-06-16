@@ -32,6 +32,20 @@ public class SecurityConfiguration {
                 .csrf().disable()
                 .authorizeHttpRequests((authorize) -> authorize
                         .requestMatchers(HttpMethod.POST, "/auth/**").permitAll()
+
+                        // Permisos para productos
+                        .requestMatchers(HttpMethod.GET, "/api/products/**").hasAnyRole("USER", "SUPER_ADMIN")
+                        .requestMatchers(HttpMethod.POST, "/api/products/**").hasRole("SUPER_ADMIN")
+                        .requestMatchers(HttpMethod.PUT, "/api/products/**").hasRole("SUPER_ADMIN")
+                        .requestMatchers(HttpMethod.DELETE, "/api/products/**").hasRole("SUPER_ADMIN")
+
+                        // Permisos para categorías
+                        .requestMatchers(HttpMethod.GET, "/api/categories/**").hasAnyRole("USER", "SUPER_ADMIN")
+                        .requestMatchers(HttpMethod.POST, "/api/categories/**").hasRole("SUPER_ADMIN")
+                        .requestMatchers(HttpMethod.PUT, "/api/categories/**").hasRole("SUPER_ADMIN")
+                        .requestMatchers(HttpMethod.DELETE, "/api/categories/**").hasRole("SUPER_ADMIN")
+
+                        // Todo lo demás requiere autenticación
                         .anyRequest().authenticated()
                 )
                 .sessionManagement()
@@ -42,5 +56,4 @@ public class SecurityConfiguration {
 
         return http.build();
     }
-
 }

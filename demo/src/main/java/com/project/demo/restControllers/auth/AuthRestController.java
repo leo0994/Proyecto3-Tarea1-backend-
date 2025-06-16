@@ -1,4 +1,4 @@
-package com.project.demo.rest.auth;
+package com.project.demo.restControllers.auth;
 
 import com.project.demo.logic.entity.auth.AuthenticationService;
 import com.project.demo.logic.entity.auth.JwtService;

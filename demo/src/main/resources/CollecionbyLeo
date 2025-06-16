@@ -1,0 +1,125 @@
+{
+	"content": [
+		{
+			"product_id": 2,
+			"product_name": "Laptop ASUS",
+			"product_description": "Laptop para gaming",
+			"product_price": 1200.0,
+			"stock": 10,
+			"category": {
+				"category_id": 1,
+				"category_name": "Tecnología",
+				"category_description": "Artículos de tecnología"
+			}
+		},
+		{
+			"product_id": 3,
+			"product_name": "Laptop ASUS",
+			"product_description": "Laptop para gaming",
+			"product_price": 1200.0,
+			"stock": 10,
+			"category": {
+				"category_id": 1,
+				"category_name": "Tecnología",
+				"category_description": "Artículos de tecnología"
+			}
+		},
+		{
+			"product_id": 4,
+			"product_name": "Laptop ASUS",
+			"product_description": "Laptop para gaming",
+			"product_price": 1200.0,
+			"stock": 10,
+			"category": {
+				"category_id": 1,
+				"category_name": "Tecnología",
+				"category_description": "Artículos de tecnología"
+			}
+		},
+		{
+			"product_id": 5,
+			"product_name": "Laptop ASUS",
+			"product_description": "Laptop para gaming",
+			"product_price": 1200.0,
+			"stock": 10,
+			"category": {
+				"category_id": 1,
+				"category_name": "Tecnología",
+				"category_description": "Artículos de tecnología"
+			}
+		},
+		{
+			"product_id": 6,
+			"product_name": "Tablet Samsung Galaxy Tab S9",
+			"product_description": "Tablet de gama alta para productividad y entretenimiento",
+			"product_price": 850.0,
+			"stock": 12,
+			"category": {
+				"category_id": 1,
+				"category_name": "Tecnología",
+				"category_description": "Artículos de tecnología"
+			}
+		},
+		{
+			"product_id": 7,
+			"product_name": "Impresora HP LaserJet",
+			"product_description": "Impresora multifuncional láser",
+			"product_price": 250.0,
+			"stock": 18,
+			"category": {
+				"category_id": 1,
+				"category_name": "Tecnología",
+				"category_description": "Artículos de tecnología"
+			}
+		},
+		{
+			"product_id": 8,
+			"product_name": "Mouse Logitech MX Master 3S",
+			"product_description": "Mouse ergonómico de alto rendimiento",
+			"product_price": 110.0,
+			"stock": 40,
+			"category": {
+				"category_id": 1,
+				"category_name": "Tecnología",
+				"category_description": "Artículos de tecnología"
+			}
+		},
+		{
+			"product_id": 9,
+			"product_name": "Impresora HP LaserJet",
+			"product_description": "Impresora multifuncional láser",
+			"product_price": 250.0,
+			"stock": 18,
+			"category": {
+				"category_id": 1,
+				"category_name": "Tecnología",
+				"category_description": "Artículos de tecnología"
+			}
+		}
+	],
+	"pageable": {
+		"pageNumber": 0,
+		"pageSize": 10,
+		"sort": {
+			"empty": true,
+			"sorted": false,
+			"unsorted": true
+		},
+		"offset": 0,
+		"paged": true,
+		"unpaged": false
+	},
+	"last": true,
+	"totalElements": 8,
+	"totalPages": 1,
+	"size": 10,
+	"number": 0,
+	"sort": {
+		"empty": true,
+		"sorted": false,
+		"unsorted": true
+	},
+	"first": true,
+	"numberOfElements": 8,
+	"empty": false
+}

@@ -1,4 +1,4 @@
-package com.project.demo.rest.user;
+package com.project.demo.restControllers.user;
 
 import com.project.demo.logic.entity.user.User;
 import com.project.demo.logic.entity.user.UserRepository;
@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/users")
-public class UserRestControler {
+public class UserRestControllerAPI {
     @Autowired
     private UserRepository UserRepository;
 
