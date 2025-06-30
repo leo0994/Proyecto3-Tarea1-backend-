@@ -1,11 +1,13 @@
 package com.project.demo.logic.entity.user;
 
+import java.util.Map;
+
 public class LoginResponse {
     private String token;
 
-    private User authUser;
-
     private long expiresIn;
+
+    private Map<String,Object> authUser;
 
     public String getToken() {
         return token;
@@ -23,11 +25,10 @@ public class LoginResponse {
         this.expiresIn = expiresIn;
     }
 
-    public User getAuthUser() {
-        return authUser;
-    }
-
-    public void setAuthUser(User authUser) {
+    public void setAuthUser(Map<String, Object> authUser) {
         this.authUser = authUser;
+    }
+    public Map<String, Object> getAuthUser() {
+        return authUser;
     }
 }

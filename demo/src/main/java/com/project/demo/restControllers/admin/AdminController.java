@@ -1,4 +1,4 @@
-package com.project.demo.rest.admin;
+package com.project.demo.restControllers.admin;
 
 import com.project.demo.logic.entity.rol.Role;
 import com.project.demo.logic.entity.rol.RoleEnum;

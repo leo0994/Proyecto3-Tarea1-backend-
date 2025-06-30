@@ -1,4 +1,4 @@
-package com.project.demo.rest.auth;
+package com.project.demo.restControllers.auth;
 
 import com.project.demo.logic.entity.auth.AuthenticationService;
 import com.project.demo.logic.entity.auth.JwtService;
@@ -16,6 +16,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RequestMapping("/auth")
@@ -41,11 +44,9 @@ public class AuthRestController {
         this.jwtService = jwtService;
         this.authenticationService = authenticationService;
     }
-
     @PostMapping("/login")
     public ResponseEntity<LoginResponse> authenticate(@RequestBody User user) {
         User authenticatedUser = authenticationService.authenticate(user);
-
         String jwtToken = jwtService.generateToken(authenticatedUser);
 
         LoginResponse loginResponse = new LoginResponse();
@@ -53,8 +54,18 @@ public class AuthRestController {
         loginResponse.setExpiresIn(jwtService.getExpirationTime());
 
         Optional<User> foundedUser = userRepository.findByEmail(user.getEmail());
+        if (foundedUser.isPresent()) {
+            User userFromDb = foundedUser.get();
 
-        foundedUser.ifPresent(loginResponse::setAuthUser);
+            // Construimos el JSON esperado por Angular
+            Map<String, Object> authUser = new HashMap<>();
+            authUser.put("email", userFromDb.getEmail());
+            authUser.put("authorities", List.of(
+                    Map.of("authority", userFromDb.getRole().getName().name()) // Ej: SUPER_ADMIN
+            ));
+
+            loginResponse.setAuthUser(authUser);
+        }
 
         return ResponseEntity.ok(loginResponse);
     }
