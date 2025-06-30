@@ -33,23 +33,34 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests((authorize) -> authorize
                         .requestMatchers(HttpMethod.POST, "/auth/**").permitAll()
 
+<<<<<<< HEAD
 
+=======
+                        // Permisos para productos
+>>>>>>> a1c0723f618234ad8abd45e372c238c4f140857e
                         .requestMatchers(HttpMethod.GET, "/api/products/**").hasAnyRole("USER", "SUPER_ADMIN")
                         .requestMatchers(HttpMethod.POST, "/api/products/**").hasRole("SUPER_ADMIN")
                         .requestMatchers(HttpMethod.PUT, "/api/products/**").hasRole("SUPER_ADMIN")
                         .requestMatchers(HttpMethod.DELETE, "/api/products/**").hasRole("SUPER_ADMIN")
 
+<<<<<<< HEAD
 
+=======
+                        // Permisos para categorías
+>>>>>>> a1c0723f618234ad8abd45e372c238c4f140857e
                         .requestMatchers(HttpMethod.GET, "/api/categories/**").hasAnyRole("USER", "SUPER_ADMIN")
                         .requestMatchers(HttpMethod.POST, "/api/categories/**").hasRole("SUPER_ADMIN")
                         .requestMatchers(HttpMethod.PUT, "/api/categories/**").hasRole("SUPER_ADMIN")
                         .requestMatchers(HttpMethod.DELETE, "/api/categories/**").hasRole("SUPER_ADMIN")
 
+<<<<<<< HEAD
                         .requestMatchers(HttpMethod.GET, "/api/users/**").hasRole("SUPER_ADMIN")
                         .requestMatchers(HttpMethod.POST, "/api/users/**").hasRole("SUPER_ADMIN")
                         .requestMatchers(HttpMethod.PUT, "/api/users/**").hasRole("SUPER_ADMIN")
                         .requestMatchers(HttpMethod.DELETE, "/api/users/**").hasRole("SUPER_ADMIN")
 
+=======
+>>>>>>> a1c0723f618234ad8abd45e372c238c4f140857e
                         // Todo lo demás requiere autenticación
                         .anyRequest().authenticated()
                 )
